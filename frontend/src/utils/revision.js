@@ -1,5 +1,10 @@
 const STORAGE_KEY = 'spaced_repetition_planner_topics';
-const API_URL = 'http://localhost:3001/api/topics';
+
+const BASE_URL = 
+  (import.meta.env && import.meta.env.VITE_API_BASE_URL) || 
+  (typeof process !== 'undefined' && process.env.REACT_APP_API_URL) || 
+  'http://localhost:3001';
+const API_URL = `${BASE_URL}/api/topics`;
 
 export function formatDate(date) {
   const yyyy = date.getFullYear();
