@@ -37,23 +37,23 @@ export function calculateRevisions(initialDateStr) {
 }
 
 // LocalStorage Fallback Helpers
-// export function loadTopicsLocal() {
-//   try {
-//     const data = localStorage.getItem(STORAGE_KEY);
-//     return data ? JSON.parse(data) : [];
-//   } catch (err) {
-//     console.error('Error loading fallback topics:', err);
-//     return [];
-//   }
+export function loadTopicsLocal() {
+  try {
+    const data = localStorage.getItem(STORAGE_KEY);
+    return data ? JSON.parse(data) : [];
+  } catch (err) {
+    console.error('Error loading fallback topics:', err);
+    return [];
+  }
 // }
 
-// export function saveTopicsLocal(topics) {
-//   try {
-//     localStorage.setItem(STORAGE_KEY, JSON.stringify(topics));
-//   } catch (err) {
-//     console.error('Error saving fallback topics:', err);
-//   }
-// }
+export function saveTopicsLocal(topics) {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(topics));
+  } catch (err) {
+    console.error('Error saving fallback topics:', err);
+  }
+}
 
 // API Connection Helpers with LocalStorage fallbacks
 export async function API_fetchTopics() {
