@@ -45,7 +45,7 @@ export function loadTopicsLocal() {
     console.error('Error loading fallback topics:', err);
     return [];
   }
-// }
+}
 
 export function saveTopicsLocal(topics) {
   try {
